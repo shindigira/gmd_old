@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Input, Button } from "gm-ui-components";
+import { Button, Input } from "gm-ui-components";
 
 /**
  * COMPONENT
@@ -24,8 +24,8 @@ class AuthForm extends React.Component {
       <div>
         <div>
           <Input
-            name="username"
-            placeholder="Username"
+            name="email"
+            placeholder="Email"
             shouldFitContainer
             style={margin}
             type="text"
