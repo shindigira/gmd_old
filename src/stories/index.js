@@ -1,22 +1,21 @@
-import React from 'react';
+import React from "react";
 
-import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
-import { linkTo } from '@storybook/addon-links';
+import { storiesOf } from "@storybook/react";
+import { action } from "@storybook/addon-actions";
+import { linkTo } from "@storybook/addon-links";
+import ResetPassword from "../components/ResetPassword";
+import { Button, Welcome } from "@storybook/react/demo";
 
-import { Button, Welcome } from '@storybook/react/demo';
-
-storiesOf('Welcome', module).add('to Storybook', () => (
-  <Welcome showApp={linkTo('Button')} />
+const wrapper = {
+  display: "flex",
+  width: "300px"
+};
+storiesOf("Welcome", module).add("to Storybook", () => (
+  <Welcome showApp={linkTo("Button")} />
 ));
 
-storiesOf('Button', module)
-  .add('with text', () => (
-    <Button onClick={action('clicked')}>Hello Button</Button>
-  ))
-  .add('with more text', () => (
-    <Welcome onClick={action('clicked')}>Hello Button Again</Welcome>
-  ))
-  .add('with some emoji', () => (
-    <Button onClick={action('clicked')}>😀 😎 👍 💯</Button>
-  ));
+storiesOf("ResetPassword", module).add("with text", () => (
+  <div style={wrapper}>
+    <ResetPassword onSubmit={action("password change")} />
+  </div>
+));
