@@ -10,12 +10,17 @@ const wrapper = {
   display: "flex",
   width: "300px"
 };
+const handleSubmit = () => {
+  action("password reset");
+  alert("password changed");
+};
+
 storiesOf("Welcome", module).add("to Storybook", () => (
   <Welcome showApp={linkTo("Button")} />
 ));
 
 storiesOf("ResetPassword", module).add("with text", () => (
   <div style={wrapper}>
-    <ResetPassword onSubmit={action("password change")} />
+    <ResetPassword handleSubmit={handleSubmit} />
   </div>
 ));

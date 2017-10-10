@@ -6,9 +6,14 @@ const margin = {
 };
 
 const ResetPassword = ({ handleSubmit }) => {
+  const _onSubmit = e => {
+    e.preventDefault();
+    handleSubmit();
+  };
+
   return (
     <div>
-      <form method="post" onSubmit={handleSubmit}>
+      <form onSubmit={_onSubmit}>
         <Input placeholder="Password" shouldFitContainer style={margin} />
         <Input
           placeholder="Verify Password"
@@ -22,4 +27,9 @@ const ResetPassword = ({ handleSubmit }) => {
     </div>
   );
 };
+
+ResetPassword.defaultProps = {
+  handleSubmit: () => {}
+};
+
 export default ResetPassword;
