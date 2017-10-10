@@ -1,22 +1,29 @@
-import React from 'react';
+import React from "react";
 
-import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
-import { linkTo } from '@storybook/addon-links';
+import { storiesOf } from "@storybook/react";
+import { action } from "@storybook/addon-actions";
+import { linkTo } from "@storybook/addon-links";
 
-import { Button, Welcome } from '@storybook/react/demo';
+import { Button, Welcome } from "@storybook/react/demo";
+import AuthForm from "../components/AuthForm";
 
-storiesOf('Welcome', module).add('to Storybook', () => (
-  <Welcome showApp={linkTo('Button')} />
+storiesOf("Welcome", module).add("to Storybook", () => (
+  <Welcome showApp={linkTo("Button")} />
 ));
+const loginStyle = {
+  display: "flex",
+  justifyContent: "center",
+  height: "100vh",
+  width: "300px"
+};
 
-storiesOf('Button', module)
-  .add('with text', () => (
-    <Button onClick={action('clicked')}>Hello Button</Button>
-  ))
-  .add('with more text', () => (
-    <Welcome onClick={action('clicked')}>Hello Button Again</Welcome>
-  ))
-  .add('with some emoji', () => (
-    <Button onClick={action('clicked')}>😀 😎 👍 💯</Button>
-  ));
+storiesOf("Login", module).add("with text", () => {
+  return (
+    <div style={loginStyle}>
+      <AuthForm
+        handleLogin={() => alert("logging in")}
+        handleRegister={() => alert("registering")}
+      />
+    </div>
+  );
+});
