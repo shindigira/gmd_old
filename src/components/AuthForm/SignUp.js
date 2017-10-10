@@ -30,4 +30,8 @@ const SignUp = ({ toggleView }) => {
   );
 };
 
+SignUp.propTypes = {
+  toggleView: PropTypes.func.isRequired
+};
+
 export default SignUp;

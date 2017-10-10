@@ -1,5 +1,6 @@
 import React from "react";
 import { Button, Input } from "gm-ui-components";
+import PropTypes from "prop-types";
 
 const margin = {
   margin: "10px",
@@ -38,6 +39,10 @@ const Login = ({ toggleView }) => {
       </a>
     </div>
   );
+};
+
+Login.propTypes = {
+  toggleView: PropTypes.func.isRequired
 };
 
 export default Login;
