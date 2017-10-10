@@ -41,8 +41,8 @@ AuthForm.defaultProps = {
 };
 
 AuthForm.propTypes = {
-  handleLogin: PropTypes.func.isRequired,
-  handleRegister: PropTypes.func.isRequired
+  handleLogin: PropTypes.func,
+  handleRegister: PropTypes.func
 };
 
 export default AuthForm;
