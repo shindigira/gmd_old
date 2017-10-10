@@ -22,5 +22,15 @@
     "@storybook/react": "3.2.10",
     "@storybook/addon-actions": "3.2.10",
     "@storybook/addon-links": "3.2.10"
+  },
+  "prettier": {
+    "bracketSpacing": true,
+    "jsxBracketSameLine": false,
+    "printWidth": 80,
+    "semi": true,
+    "singleQuote": false,
+    "tabWidth": 2,
+    "trailingComma": "none",
+    "useTabs": false
   }
 }

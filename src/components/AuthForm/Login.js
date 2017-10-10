@@ -6,7 +6,7 @@ const margin = {
   display: "inline-block"
 };
 
-const Login = ({ login, handleLogin, toggleView }) => {
+const Login = ({ toggleView }) => {
   return (
     <div>
       <div>
