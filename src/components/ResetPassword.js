@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Input, Button } from "gm-ui-components";
+import PropTypes from "prop-types";
 
 const margin = {
   margin: "10px"
@@ -30,6 +31,10 @@ const ResetPassword = ({ handleSubmit }) => {
 
 ResetPassword.defaultProps = {
   handleSubmit: () => {}
+};
+
+ResetPassword.propTypes = {
+  handleSubmit: PropTypes.func
 };
 
 export default ResetPassword;
