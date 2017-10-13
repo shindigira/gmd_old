@@ -6,15 +6,23 @@ class AuthForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      login: true
+      login: true,
+      rememberMe: false
     };
   }
 
   toggleView = () => this.setState({ login: !this.state.login });
 
+  toggleRememberMe = () =>
+    this.setState({ rememberMe: !this.state.rememberMe });
+
   _onSubmit = e => {
+    const { login, rememberMe } = this.state;
+    const { handleLogin, handleRegister } = this.props;
+
     e.preventDefault();
-    this.state.login ? this.props.handleLogin() : this.props.handleRegister();
+
+    login ? handleLogin(rememberMe) : handleRegister();
   };
 
   render() {
@@ -26,7 +34,11 @@ class AuthForm extends React.Component {
         style={{ width: "100%" }}
       >
         {login ? (
-          <Login toggleView={this.toggleView} />
+          <Login
+            toggleView={this.toggleView}
+            toggleRememberMe={this.toggleRememberMe}
+            rememberMe={this.state.rememberMe}
+          />
         ) : (
           <SignUp toggleView={this.toggleView} />
         )}

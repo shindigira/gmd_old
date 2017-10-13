@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Input } from "gm-ui-components";
+import { Button, Input, Checkbox } from "gm-ui-components";
 import PropTypes from "prop-types";
 
 const margin = {
@@ -7,33 +7,41 @@ const margin = {
   display: "inline-block"
 };
 
-const Login = ({ toggleView }) => {
+const Login = ({ toggleView, toggleRememberMe, rememberMe }) => {
   return (
-    <div>
-      <div>
-        <Input
-          name="email"
-          placeholder="Email"
-          shouldFitContainer
-          style={margin}
-          type="text"
-        />
-        <Input
-          name="password"
-          placeholder="Password"
-          shouldFitContainer
-          style={margin}
-          type="password"
-        />
-      </div>
-      <div>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column"
+      }}
+    >
+      <Input
+        name="email"
+        placeholder="Email"
+        shouldFitContainer
+        style={margin}
+        type="text"
+      />
+      <Input
+        name="password"
+        placeholder="Password"
+        shouldFitContainer
+        style={margin}
+        type="password"
+      />
+      <div style={{ display: "flex" }}>
         <Button size="sm" style={margin} type="submit">
           Login
         </Button>
-        <Button size="sm" style={margin} onClick={toggleView} type="button">
-          Not Registered
-        </Button>
+        <Checkbox
+          checked={rememberMe}
+          onChange={toggleRememberMe}
+          label="Remember Me"
+        />
       </div>
+      <Button size="sm" style={margin} onClick={toggleView} type="button">
+        Not Registered
+      </Button>
       <a href="#" style={margin}>
         Forgot Password?
       </a>
